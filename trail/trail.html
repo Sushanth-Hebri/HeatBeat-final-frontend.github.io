@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<HTML>
+<head><title>tral2</title>
+    <style>
+
+
+
+/*The webpage has been designed*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #ffffff;
+}
+
+/*Basic structure of slider*/
+.container{
+    width: 500px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    overflow: hidden;
+    border: 10px solid #ffffff;
+    border-radius: 8px;
+    box-shadow: -1px 5px 15px black;
+}
+
+/*Area of images*/
+.wrapper{
+    width: 100%;
+    display: flex;
+    animation: slide 16s infinite;
+}
+
+img{
+    width: 100%;
+}
+/*Animation activated by keyframes*/
+@keyframes slide{
+    0%{
+        transform: translateX(0);
+    }
+    25%{
+        transform: translateX(0);
+    }
+    30%{
+        transform: translateX(-100%);
+    }
+    50%{
+        transform: translateX(-100%);
+    }
+    55%{
+        transform: translateX(-200%);
+    }
+    75%{
+        transform: translateX(-200%);
+    }
+    80%{
+        transform: translateX(-300%);
+    }
+    100%{
+        transform: translateX(-300%);
+    }
+}
+</style>
+</head>
+
+<!--Basic structure of slider-->
+<div class="container">
+<!--Area of the images-->
+   <div class="wrapper">
+      <img src="https://filmswot.files.wordpress.com/2018/01/coco_dominates_chinese_box_office_.jpg">
+      <img src="https://www.foundry.com/sites/default/files/inline-images/Images_003_0.jpg">
+      <img src="https://www.foylefilmfestival.org/sites/default/files/COCO%20main%20image%203.jpg">
+      <img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F6%2F2017%2F11%2Fcoco_c330_56b_pub-pub16n-186_rgb-2000.jpg">
+   </div>
+
+</div>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Music Player</title>
+  <style>
+    /* Add some style to the player */
+    #player {
+      width: 500px;
+      height: 50px;
+      background-color: #ddd;
+      border-radius: 10px;
+    }
+    #song-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Add a container for the player -->
+  <div id="player">
+    <!-- Display the current song title -->
+    <div id="song-title">Now Playing:</div>
+    <!-- Add a play/pause button -->
+    <button id="play-pause">Play</button>
+    <!-- Add a next button -->
+    <button id="next">Next</button>
+  </div>
+
+  <script>
+    // Set up an array of songs
+    const songs = [
+      {
+        title: "Song 1",
+        url: "https://example.com/song1.mp3"
+      },
+      {
+        title: "Song 2",
+        url: "https://example.com/song2.mp3"
+      },
+      {
+        title: "Song 3",
+        url: "https://example.com/song3.mp3"
+      }
+    ];
+
+    // Initialize variables
+    let currentSong = 0;
+    let audio = new Audio();
+
+    // Function to play a song
+    function playSong() {
+      // Update the song title
+      document.getElementById("song-title").innerHTML = "Now Playing: " + songs[currentSong].title;
+      // Set the audio source
+      audio.src = songs[currentSong].url;
+      // Play the song
+      audio.play();
+    }
+
+    // Function to play the next song
+    function nextSong() {
+      // Go back to the first song if we're at the end of the list
+      if (currentSong === songs.length - 1) {
+        currentSong = 0;
+      } else {
+        currentSong++;
+      }
+      // Play the next song
+      playSong();
+    }
+
+    // Function to toggle play/pause
+    function togglePlayPause() {
+      // If the song is currently playing, pause it
+      if (!audio.paused) {
+        audio.pause();
+      } else {
+        // Otherwise, play the song
+        audio.play();
+      }
+    }
+
+    // Add event listeners for the buttons
+    document.getElementById("play-pause").addEventListener("click", togglePlayPause);
+    document.getElementById("next").addEventListener("click", nextSong);
+
+    // Start playing the first song
+    playSong();
+  </script>
+</body>
+</html>
+
