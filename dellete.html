@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #visualizerFrame {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+    
+    }
+
+    #thefile {
+            position: fixed;
+            top: 10px;
+            left: 230px;
+            z-index: 300;
+        }
+
+
+    #content {
+      position: relative;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+    
+    <button onclick="sendSongUrlToIframe()">Play Song</button>
+    <iframe id="visualizerFrame" src="visualizer356.html"></iframe>
+    
+    <script>
+      function sendSongUrlToIframe() {
+        var songUrl = "heysita.mp3"; // Replace with the URL of the song you want to play
+    
+        var iframe = document.getElementById("visualizerFrame");
+        iframe.contentWindow.setSongUrl(songUrl);
+      }
+    </script>
+  <h1 id="content" style="font-size: 50px;">
+    heello good morning
+  </h1>
+
+  <script>
+    // If you have JavaScript code specific to the parent page, you can include it here
+  </script>
+</body>
+</html>

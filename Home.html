@@ -15,7 +15,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin page</title>
+  <title>HEAT BEAT</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <style>
     @import url(https://fonts.googleapis.com/css?family=Dancing+Script);
@@ -37,6 +37,7 @@
     .imgs1 {
       box-shadow: 0 7px 9px 0 rgba(0, 0, 0, 0.788);
       padding: 16px;
+      border-radius: 40%;
       background-color: #886d88;
       border-color: rgb(100, 15, 210);
       color: rgb(255, 255, 255);
@@ -48,6 +49,11 @@
       border-radius: 58px;
       flex-wrap: wrap;
 
+    }
+
+    .imgs1:hover {
+      scale: 1.01;
+      border-radius: 50px;
     }
 
 
@@ -105,10 +111,7 @@
       box-sizing: border-box
     }
 
-    body {
-      font-family: Verdana, sans-serif;
-      margin: 0
-    }
+
 
     .mySlides {
       display: none
@@ -193,7 +196,7 @@
 
     /* Fading animation */
     .fade {
-      animation-name: fade;
+      animation: fade;
       animation-duration: 1.5s;
     }
 
@@ -236,10 +239,84 @@
       text-align: center;
       padding-bottom: 6px;
     }
+
+    img {
+      border-radius: 20%;
+    }
+
+    .kantara {
+      border-radius: 0%;
+    }
+
+
+
+
+
+
+    /* Carousel */
+
+    .slider {
+      background-color: #f7f7f7;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-bottom: 10px solid #f7f7f7;
+      border-top: 10px solid #f7f7f7;
+    }
+
+    .slide {
+      text-align: center;
+      background: #f7f7f7;
+      display: none;
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .active-slide {
+      display: block;
+    }
+
+    .slider-nav {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .arrow-prev {
+      margin-right: 45px;
+      display: inline-block;
+      vertical-align: top;
+      margin-top: 9px;
+    }
+
+    .arrow-next {
+      margin-left: 45px;
+      display: inline-block;
+      vertical-align: top;
+      margin-top: 9px;
+    }
+
+    .slider-dots {
+      list-style: none;
+      display: inline-block;
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+
+    .slider-dots li {
+      color: #bbbcbc;
+      display: inline;
+      font-size: 30px;
+      margin-right: 5px;
+    }
+
+    .slider-dots li.active-dot {
+      color: #363636;
+    }
   </style>
 </head>
 
-<body>
+<body onload="checkAlert()">
 
 
 
@@ -262,12 +339,20 @@
     </div>
 
     <div class="topnav" id="myTopnav">
-      <a href="subhash1.html" class="active">Insert New Song</a>
-      <a href="subhash2.html">Update Song Details</a>
-      <a href="subhash3.html">Change Premium Plans</a>
-      <a href="subhash4.html">Delete A Song</a>
+      <a href="#" class="active">HOME</a>
+      <a href="library.html">LIBRARY</a>
+      <a href="MusicOfTheDay.html">HEAT-BOX</a>
 
-
+      <div class="dropdown">
+        <button class="dropbtn">PREMIUM
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content animate">
+          <a href="premium.html">Ad free music</a>
+          <a href="premium.html">download songs</a>
+          <a href="premium.html">create own podcast</a>
+        </div>
+      </div>
 
       <a href="About.html">ABOUT</a>
 
@@ -306,19 +391,21 @@
 
     <div class="mySlides fade">
       <div class="numbertext"></div>
-      <img src="https://www.bollywoodhungama.com/wp-content/uploads/2022/10/Kantara.jpg" width="100%" height="300">
+      <img class="kantara" src="https://www.bollywoodhungama.com/wp-content/uploads/2022/10/Kantara.jpg" width="100%"
+        height="300">
       <div class="text">Enjoy the trending songs </div>
     </div>
 
     <div class="mySlides fade">
       <div class="numbertext"></div>
-      <img src="feelvibe.jpg" width="100%" height="300">
+      <img class="kantara" src="pasoori.jpg" width="100%" height="300">
       <div class="text">Authentic only</div>
     </div>
 
     <div class="mySlides fade">
       <div class="numbertext"></div>
-      <img src="justbreathe.gif" width="90%" height="300">
+      <img class="kantara" src="https://st1.latestly.com/wp-content/uploads/2022/08/20-Image-3.jpg" width="100%"
+        height="300">
       <div class="text">We pick best for you</div>
     </div>
 
@@ -371,7 +458,7 @@
   <div>
     <h1 style="color:white;"></h1> <br><br><br>
     <div id="main2">
-      <div class="imgs1"><a href="playerpop"><img
+      <div class="imgs1"><a href="MusicPlayer.html"><img class="img"
             src="https://www.nanalyze.com/app/uploads/2018/05/AI-Generated-Music-Teaser.jpg"
             style="width: 100%;height: 100%;"></a><br><br><span class="spn">Pop</span>
       </div>
@@ -379,7 +466,7 @@
           src="https://media.gettyimages.com/id/970161478/photo/young-man-with-tablet-and-headphones-sitting-on-bridge-at-night.jpg?s=612x612&w=0&k=20&c=dEIMRkGJN35plrsc0bl3Sh0Wjlwu_2B4Gz7ZMoqD92Y="
           style="width: 100%;height: 100%;"><br><br><span class="spn">Lofi</span>
       </div>
-      <div class="imgs1"><a href="player.html"><img
+      <div class="imgs1"><a href="MusicPlayer.html"><img
             src="https://media.gettyimages.com/id/524906493/photo/praying-to-music.jpg?s=612x612&w=0&k=20&c=9YJia8mVtOE1temh6EKx7OjfJ2LrorOxuuLL901ZVuU="
             style="width: 100%;height: 100%;"></a><br><br><span class="spn">EDM</span>
       </div>
@@ -407,10 +494,11 @@
         <div class="imgs1"><img src="bolly.jpg" style="width: 100%;height: 100%;"><br><br><span
             class="spn">bollywood</span>
         </div>
-        <div class="imgs1"><a href="playerkannada.html"><img src="kannada.jpg" style="width: 100%;height: 100%;"></a>
+        <div class="imgs1"><a href="kannadaplayer.html"><img src="kannada.jpg" style="width: 100%;height: 100%;"></a>
           <br><br><span class="spn">kannada</span>
         </div>
-        <div class="imgs1"><img src="image (5).png" style="width: 100%;height: 100%;"><br><br><span></span>
+        <div class="imgs1"><a href="kannadaplayer.html">
+            <img src="image (5).png" style="width: 100%;height: 100%;"></a><br><br><span></span>
         </div>
 
 
@@ -429,11 +517,9 @@
       90's hit</h1>
   </div>
   <div padding:10px;>
-    <h1 style="color:white;font-weight: ;"></h1> <br><br><br>
+    <h1 style="color:white;"></h1> <br><br><br>
     <div id="main2">
-      <div class="imgs1"><img
-          src="put new"
-          style="width: 100%;height: 100%;"><br><span></span>
+      <div class="imgs1"><img src="master.jfif" style="width: 100%;height: 100%;"><br><span></span>
       </div>
       <div class="imgs1"><img src="image (2).png" style="width:100%;height: 100%;"><br><br><span></span>
       </div>
@@ -455,13 +541,14 @@
 
   <div id="trending">
     <h1 id="trendingid">
-      Feel good</h1>
+      Listen and Read</h1>
   </div>
-  <div padding:1px;">
-    <h1 style="color:white;font-weight: ;"> </h1> <br><br><br>
+  <div padding:1px;>
+    <h1 style="color:white;"> </h1> <br><br><br>
     <div id="main2">
-      <div class="imgs1"><img src="https://assetscdn1.hm.com/images/catalog/view_item/733295/1626259710574.png"
-          style="width: 64px;height: 64px;"><br><span></span>
+
+      <div class="imgs1"><a href="playerlyrics.hml"><img src="lets.png" style="width:100%;height:100%"></a><br><br><span
+          class="spn">lets go</span>
       </div>
       <div class="imgs1"><img src="https://assetscdn1.hm.com/images/catalog/view_item/733296/1626259884425.png"
           style="width: 64px;height: 64px;"><br><span></span>
@@ -481,8 +568,8 @@
     <h1 id="trendingid">
       on progress...</h1>
   </div>
-  <div padding:1px;">
-    <h1 style="color:white;font-weight: ;"> </h1> <br><br><br>
+  <div padding:1px;>
+    <h1 style="color:white;"> </h1> <br><br><br>
     <div id="main2">
       <div class="imgs1"><img src="https://assetscdn1.hm.com/images/catalog/view_item/733295/1626259710574.png"
           style="width: 64px;height: 64px;"><br><span></span>
@@ -499,6 +586,30 @@
 
     </div>
   </div>
+
+  <div id="trending">
+    <h1 id="trendingid">
+      on progress...</h1>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   </div>
 
 
@@ -537,7 +648,18 @@
   </script>
 
 
+  <script>
 
+    function checkAlert() {
+      if (localStorage.getItem("alert") === "true") {
+        window.alert("Logged in successfull");
+        localStorage.removeItem("alert");
+      }
+    }
+  </script>
+
+
+  </script>
 
 
 
@@ -545,7 +667,3 @@
 </body>
 
 </html>
-
-1)FAQ Page and About--
-2)library Page and playlist--
-3)liked songs Page --refer spotify
